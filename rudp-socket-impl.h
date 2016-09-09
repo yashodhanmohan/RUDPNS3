@@ -210,7 +210,7 @@ private:
   Ipv4EndPoint*       m_endPoint;   //!< the IPv4 endpoint
   Ipv6EndPoint*       m_endPoint6;  //!< the IPv6 endpoint
   Ptr<Node>           m_node;       //!< the associated node
-  Ptr<UdpL4Protocol> m_udp;         //!< the associated UDP L4 protocol
+  Ptr<RudpL4Protocol> m_rudp;         //!< the associated UDP L4 protocol
   Callback<void, Ipv4Address,uint8_t,uint8_t,uint8_t,uint32_t> m_icmpCallback;  //!< ICMP callback
   Callback<void, Ipv6Address,uint8_t,uint8_t,uint8_t,uint32_t> m_icmpCallback6; //!< ICMPv6 callback
 
@@ -222,7 +222,6 @@ private:
   bool                     m_shutdownSend;    //!< Send no longer allowed
   bool                     m_shutdownRecv;    //!< Receive no longer allowed
   bool                     m_connected;       //!< Connection established
-  bool                     m_allowBroadcast;  //!< Allow send broadcast packets
 
   std::queue<Ptr<Packet> > m_deliveryQueue; //!< Queue for incoming packets
   uint32_t m_rxAvailable;                   //!< Number of available bytes to be received
